@@ -1,6 +1,6 @@
-@CboeStocksAPI_HostAddress = http://localhost:5076
+@TradingAPI_HostAddress = http://localhost:5076
 
-GET {{CboeStocksAPI_HostAddress}}/weatherforecast/
+GET {{TradingAPI_HostAddress}}/trades/
 Accept: application/json
 
 ###
