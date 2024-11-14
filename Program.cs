@@ -4,15 +4,15 @@ using MessagePack;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddSignalR()
-//    .AddMessagePackProtocol(options =>
-//    {
-//        options.SerializerOptions = MessagePackSerializerOptions.Standard
-//            .WithCompression(MessagePackCompression.None)
-//            .WithSecurity(MessagePackSecurity.UntrustedData);
-//    });
+builder.Services.AddSignalR()
+    .AddMessagePackProtocol(options =>
+    {
+        options.SerializerOptions = MessagePackSerializerOptions.Standard
+            .WithCompression(MessagePackCompression.Lz4Block)
+            .WithSecurity(MessagePackSecurity.UntrustedData);
+    });
 
-builder.Services.AddSignalR();
+//builder.Services.AddSignalR();
 
 builder.Services.AddCors(options =>
 {
